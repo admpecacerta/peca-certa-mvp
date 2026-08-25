@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Naka Acessórios
+
+Base MVP em **Next.js + Prisma + TypeScript + Tailwind** para a Naka Acessórios, um marketplace de acessórios para celular.
+
+## O que esta base cobre
+
+- branding inicial da Naka Acessórios
+- landing page com foco em capas, cabos, carregadores, películas, suportes e fones
+- schema Prisma para catálogo, lojas, ofertas, alertas e histórico de preços
+- placeholder de contato por e-mail e espaço preparado para futuras integrações com Instagram e Facebook
 
 ## Getting Started
 
-First, run the development server:
+Primeiro, instale as dependências e suba o ambiente local:
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) para ver a vitrine inicial.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuração rápida
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Defina as variáveis de ambiente necessárias antes de trabalhar com dados reais:
 
-## Learn More
+```bash
+DATABASE_URL="file:./dev.db"
+NEXT_PUBLIC_CONTACT_EMAIL="contato@nakaacessorios.com"
+NEXT_PUBLIC_INSTAGRAM_URL=""
+NEXT_PUBLIC_FACEBOOK_URL=""
+```
 
-To learn more about Next.js, take a look at the following resources:
+O e-mail fica centralizado em `src/lib/site-config.ts`, com fallback para o valor de `NEXT_PUBLIC_CONTACT_EMAIL`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Próximos passos sugeridos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- cadastrar o e-mail oficial da marca na variável `NEXT_PUBLIC_CONTACT_EMAIL`
+- popular o catálogo inicial de acessórios por categoria, marca e modelo compatível
+- conectar Instagram e Facebook quando os perfis estiverem prontos
+- adicionar fluxos reais de importação/sincronização de ofertas
 
-## Deploy on Vercel
+## Desenvolvimento
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run lint` para validar o código
+- `npm run build` para verificar a aplicação em produção
+- `npx prisma validate` para validar o schema Prisma
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Referências
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Prisma Documentation](https://www.prisma.io/docs)
