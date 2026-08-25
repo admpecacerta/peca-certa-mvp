@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Home() {
@@ -27,6 +28,20 @@ export default function Home() {
               em um marketplace pensado para destacar compatibilidade, preço e
               disponibilidade.
             </p>
+          </div>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link
+              href="/loja"
+              className="rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-semibold text-white hover:bg-zinc-800 transition"
+            >
+              Entrar na loja →
+            </Link>
+            <Link
+              href="/loja/cadastro"
+              className="rounded-full border border-zinc-300 px-6 py-2.5 text-sm font-semibold text-zinc-700 hover:bg-zinc-100 transition"
+            >
+              Cadastrar minha loja
+            </Link>
           </div>
           <div className="flex flex-col gap-3 text-sm text-zinc-600 sm:flex-row sm:items-center">
             <span className="rounded-full bg-zinc-100 px-4 py-2">
